@@ -36,6 +36,8 @@ h1 {
   font-size: 26px;
 }
 
+
+
 .tagline {
   margin: 6px 0 0;
   color: #666;
@@ -73,14 +75,16 @@ h2 {
 }
 
 .dates {
+  font-size: 14px;       
+  color: #555;           
   font-weight: bold;
-  color: #222;
-  margin-right: 8px;
 }
 
 .job h3 {
+ font-size: 16px;       
+  font-weight: bold;     
+  color: #222;           
   margin: 2px 0 4px;
-  font-size: 16px;
 }
 
 .place {
