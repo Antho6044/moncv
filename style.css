@@ -1,139 +1,177 @@
+:root {
+  --bg: #f7f7fb;        /* Couleur de fond principale */
+  --card: #ffffff;      /* Fond des sections (cartes blanches) */
+  --ink: #1e1e24;       /* Texte principal */
+  --muted: #6b7280;     /* Texte secondaire (gris) */
+  --accent: #2563eb;    /* Bleu utilisé pour les titres et liens */
+}
+
 body {
+  font-family: Arial, sans-serif;  /* Police simple et lisible */
+  background-color: var(--bg);
+  color: var(--ink);
   margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color: #333;
-  background: #f5f6fb;
-}
-
-.cv {
-  max-width: 900px;
-  margin: 24px auto;
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 16px 20px;
-}
-
-.top {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 12px;
-}
-
-.photo {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 2px solid #eef2ff;
-  background: #ddd;
-}
-
-h1 {
-  margin: 0;
-  font-size: 26px;
-}
-
-
-
-.tagline {
-  margin: 6px 0 0;
-  color: #666;
-}
-
-.contact {
-  list-style: none;
   padding: 0;
-  margin: 8px 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 16px;
-  font-size: 14px;
+  line-height: 1.6;
 }
 
-section { 
-  margin-top: 18px; 
+a {
+  color: var(--accent);       /* Liens en bleu */
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline; /* Soulignement au survol */
+}
+
+/* ===============================
+   Mise en page principale du CV
+   =============================== */
+.cv {
+  max-width: 900px;   /* Largeur fixe pour lisibilité */
+  margin: 20px auto;
+  background: var(--card);
+  padding: 20px;
+  border-radius: 16px; /* Coins arrondis pour l’aspect moderne */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ===============================
+   Header du CV
+   =============================== */
+header {
+  display: flex;
+  justify-content: space-between; /* Texte à gauche, photo à droite */
+  align-items: center;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+header p {
+  color: var(--muted);
+  margin: 4px 0;
+}
+
+header img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;  /* Coupe l’image sans la déformer */
+  border-radius: 50%; /* Rend la photo ronde */
+  border: 2px solid var(--accent);
+}
+
+/* ===============================
+   Sections générales
+   =============================== */
+section {
+  margin-bottom: 25px;
 }
 
 h2 {
-  margin: 0 0 8px;
-  font-size: 18px;
-  color: #2563eb;            
-  text-transform: uppercase; 
-  letter-spacing: 0.04em;
+  font-size: 1.2rem;
+  text-transform: uppercase; /* Titres en majuscules */
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 4px;
+  margin-bottom: 12px;
 }
 
-.job {
-  border-top: 1px dashed #eee;
-  padding: 8px 0;
+h3 {
+  margin: 6px 0;
+  font-size: 1rem;
 }
 
-.job:first-child {
-  border-top: none;
+/* ===============================
+   Liste des expériences et formations
+   =============================== */
+.experience article,
+.formation article {
+  margin-bottom: 15px;
 }
 
-.dates {
-  font-size: 14px;       
-  color: #555;           
-  font-weight: bold;
+/* Mise en avant du dernier emploi et de la dernière formation */
+#dernier-emploi, 
+#dernier-etablissement {
+  background: #eef4ff;      /* Fond bleu clair */
+  border-left: 4px solid var(--accent);
+  padding: 10px;
+  border-radius: 6px;
 }
 
-.job h3 {
- font-size: 16px;       
-  font-weight: bold;     
-  color: #222;           
-  margin: 2px 0 4px;
+/* ===============================
+   Tableau langues
+   =============================== */
+.langues table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
 }
 
-.place {
-  color: #666;
-  font-weight: normal;
+.langues th, 
+.langues td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
 }
 
-ul { 
-  margin: 6px 0 6px 18px; 
+.langues th {
+  background: var(--accent);
+  color: white;
 }
 
-ul.simple { 
-  margin-left: 18px; 
-}
-
-.skills {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.skills li {
+/* ===============================
+   Compétences avec badges
+   =============================== */
+.competences .badge {
   display: inline-block;
-  background: #f3f4f6;
+  background: #e5e7eb;   /* Gris clair */
   padding: 6px 10px;
-  border-radius: 10px;
-  margin: 6px 6px 0 0;
-  font-size: 14px;
+  border-radius: 12px;
+  margin: 4px;
+  font-size: 0.9rem;
 }
 
-.foot {
-  margin-top: 16px;
-  color: #777;
-  font-size: 12px;
-  border-top: 1px solid #eee;
-  padding-top: 10px;
+.competences .badge:hover {
+  background: var(--accent);
+  color: white;
+  transition: 0.3s;
 }
 
+/* ===============================
+   Footer et formulaire
+   =============================== */
+footer {
+  border-top: 2px solid var(--accent);
+  padding-top: 15px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
 
+footer form {
+  margin-top: 15px;
+}
+
+footer label {
+  margin-right: 10px;
+}
+
+/* ===============================
+   Responsive (écrans étroits)
+   =============================== */
 @media (max-width: 700px) {
-  .top { 
-    flex-direction: column; 
-    align-items: flex-start; 
+  header {
+    flex-direction: column;   /* Passe en colonne */
+    text-align: center;
   }
-  .photo { 
-    width: 96px; 
-    height: 96px; 
-  }
-  .contact { 
-    font-size: 13px; 
+
+  header img {
+    margin-top: 12px;
   }
 }
